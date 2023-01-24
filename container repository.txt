@@ -1,0 +1,15 @@
+cd docker-basics/
+   95  docker build -t py:v1 .
+   96  docker images
+   97  docker tag py:v1 gcr.io/playground-s-11-4577e652/py:v1
+   98  docker images
+   99  docker push gcr.io/playground-s-11-4577e652/py:v1
+  100  docker run -d -p 8085:8080 py:v1
+  101  gcloud auth configure-docker us-central1-docker.pkg.dev
+  102  docker images
+  103  docker tag py:v1 us-central1-docker.pkg.dev/playground-s-11-4577e652/demorepo
+  104  docker images
+  105  docker tag py:v1 us-central1-docker.pkg.dev/playground-s-11-4577e652/demorepo/py:v1
+  106  docker ps
+  107  docker images
+  108  docker push us-central1-docker.pkg.dev/playground-s-11-4577e652/demorepo/py:v1
